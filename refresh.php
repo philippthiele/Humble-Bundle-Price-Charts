@@ -28,10 +28,10 @@ function page_title($url) {
         return $title;
     }
 
-$verbindung = mysql_connect('127.0.0.1',$username,$password)
+$conn = mysql_connect('127.0.0.1',$username,$password)
 or die ("Database connection failed. We're sorry.");
 
-mysql_select_db($database, $verbindung)
+mysql_select_db($database, $conn)
 or die ("Database selection failed. We're sorry.");
 
 mysql_query("SET NAMES utf8");
