@@ -5,11 +5,12 @@
 </head>
 <body>
 <?php
+include 'data.php';
 
-$verbindung = mysql_connect('127.0.0.1','USER','PASSWORD') //Change this
+$conn = mysql_connect('127.0.0.1',$username,$password)
 or die ("Database connection failed. We're sorry.");
 
-mysql_select_db("DATABASE-NAME", $verbindung) //And that
+mysql_select_db($database, $conn)
 or die ("Database selection failed. We're sorry.");
 
 mysql_query("SET NAMES utf8");

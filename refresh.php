@@ -1,5 +1,7 @@
 <?php
 error_reporting(-1);
+include 'data.php';
+
 $mainBundleUrl = 'https://www.humblebundle.com/';
 
 $mainSubtring = stristr(file_get_contents($mainBundleUrl), "price bta");
@@ -9,8 +11,6 @@ $mainPrice = substr($mainSubtring, 12, 4);  // assuming the value will always be
 date_default_timezone_set ('Europe/Berlin');
 
 $date = date('Y-m-d H:i:s');
-
-
 
 function page_title($url) {
         $fp = file_get_contents($url);
@@ -28,10 +28,10 @@ function page_title($url) {
         return $title;
     }
 
-$verbindung = mysql_connect('127.0.0.1','USER','PASSWORD') //Change this
+$conn = mysql_connect('127.0.0.1',$username,$password)
 or die ("Database connection failed. We're sorry.");
 
-mysql_select_db("DATABASE-NAME", $verbindung) //And that
+mysql_select_db($database, $conn)
 or die ("Database selection failed. We're sorry.");
 
 mysql_query("SET NAMES utf8");
