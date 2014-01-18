@@ -41,7 +41,7 @@ $mainTitle = page_title($mainBundleUrl);
 $mainQuery = "INSERT INTO bundle (name, price, time)
 VALUES ('".$mainTitle."',".strip_tags($mainPrice).",'".$date."');";
 
-if(is_numeric(strip_tags($mainPrice))){
+if(is_numeric(strip_tags($mainPrice)) && $mainTitle != ""){
 mysql_query($mainQuery);
 }
 
