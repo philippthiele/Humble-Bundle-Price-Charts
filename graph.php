@@ -1,9 +1,3 @@
-<head>
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="http://code.highcharts.com/stock/highstock.js"></script>
-<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
-</head>
-<body>
 <?php
 include 'data.php';
 
@@ -64,6 +58,9 @@ $(function() {
 				text : title'.$counter.'
 			},
 			
+			chart : {
+			backgroundColor: \'#f2f2f2\'
+			},
 			series : [{
 				name : title'.$counter.',
 				data : data'.$counter.',
@@ -84,4 +81,3 @@ $counter++;
 
 }
 ?>
-</body>
